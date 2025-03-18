@@ -11,7 +11,7 @@ class AIConfig:
 		self.temperature = temperature
 		self.system_prompt = system_prompt
 
-	def chat(self, user_message: str) -> str:
+	def chat(self, user_message: str) -> dict:
 		if not user_message:
 			return {"error": "Empty message"}
 		response = ollama.chat(model=self.model, messages=[
